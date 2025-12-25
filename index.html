@@ -1,33 +1,169 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>What's Left - Scan & Cook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's Left - Scan Your Fridge, Cook Like a Chef!</title>
     <style>
-        body { font-family: 'Arial', sans-serif; margin: 0; background-color: #FFF9E5; color: #333; }
-        header { background-color: #FFD700; padding: 50px; text-align: center; }
-        .logo { width: 150px; border-radius: 20px; }
-        .container { max-width: 800px; margin: auto; padding: 20px; text-align: center; }
-        .btn { background-color: #333; color: white; padding: 15px 30px; text-decoration: none; border-radius: 30px; font-weight: bold; }
-        .screenshot { width: 45%; margin: 10px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        h1 { margin-top: 20px; }
+        /* Modern Reset & Basics */
+        body, h1, h2, p { margin: 0; padding: 0; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #FFF9E5; /* Soft Cream Yellow Background */
+            color: #333; 
+            line-height: 1.6;
+        }
+
+        /* Header Section */
+        header { 
+            background-color: #FFD700; /* Brand Yellow */
+            padding: 60px 20px; 
+            text-align: center; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .logo { 
+            width: 140px; 
+            border-radius: 24px; 
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            margin-bottom: 20px;
+        }
+        header h1 { 
+            font-size: 2.8rem; 
+            color: #222; 
+            margin-bottom: 10px;
+        }
+        header p.tagline {
+            font-size: 1.3rem;
+            color: #444;
+            font-weight: 500;
+        }
+
+        /* Main Content Container */
+        .container { 
+            max-width: 900px; 
+            margin: 40px auto; 
+            padding: 0 20px; 
+            text-align: center; 
+        }
+
+        /* Section Styling */
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #222;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 4px;
+            background-color: #FFD700;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Screenshot Grid */
+        .screenshot-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        .screenshot-wrapper {
+            flex: 1 1 200px; /* Responsive sizing */
+            max-width: 220px;
+            text-align: center;
+        }
+        .screenshot { 
+            width: 100%; 
+            border-radius: 16px; 
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12); 
+            transition: transform 0.3s ease;
+        }
+        .screenshot:hover {
+            transform: translateY(-5px);
+        }
+        .screenshot-caption {
+            margin-top: 12px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        /* Call to Action Button */
+        .btn-container {
+            margin: 60px 0;
+        }
+        .btn { 
+            background-color: #222; 
+            color: #FFD700; /* Yellow text on black button */
+            padding: 18px 40px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            font-size: 1.1rem;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #444;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #777;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Logo" class="logo">
+        <img src="logo.png" alt="What's Left App Logo" class="logo">
         <h1>What's Left</h1>
-        <p>Scan Your Fridge, Cook Like a Chef!</p>
+        <p class="tagline">Scan Your Fridge, Cook Like a Chef!</p>
     </header>
+
     <div class="container">
-        <h2>Uygulama Özellikleri</h2>
-        <p>AI destekli kamera ile elindeki malzemeleri tara, anında yemek tariflerini bul.</p>
-        <div>
-            <img src="screen1.png" class="screenshot">
-            <img src="screen2.png" class="screenshot">
+        <h2 class="section-title">App Overview</h2>
+        <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 40px; color: #555;">
+            Solve the "what's for dinner" dilemma with AI. Scan ingredients you have at home and instantly discover delicious recipes you can cook right now.
+        </p>
+
+        <div class="screenshot-grid">
+            <div class="screenshot-wrapper">
+                <img src="screen1.png" alt="AI Scanning Home Screen" class="screenshot">
+                <p class="screenshot-caption">AI Ingredient Scan</p>
+            </div>
+            <div class="screenshot-wrapper">
+                 <img src="screen3.png" alt="Recipe Results Screen" class="screenshot">
+                <p class="screenshot-caption">Instant Recipe Results</p>
+            </div>
         </div>
-        <br><br>
-        <a href="PROJE_LINKIN" class="btn">GitHub'da İncele</a>
+
+        <div class="screenshot-grid" style="margin-top: -20px;">
+            <div class="screenshot-wrapper">
+                 <img src="screen4.png" alt="Saved Recipes Screen" class="screenshot">
+                <p class="screenshot-caption">Save Favorites</p>
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="screen2.png" alt="User Profile Dashboard" class="screenshot">
+                <p class="screenshot-caption">Track Your Progress</p>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <a href="https://github.com/FurkanEfeYuksel/whats-left.git" class="btn" target="_blank">View Project on GitHub</a>
+        </div>
     </div>
+
+    <footer>
+        <p>© 2025 What's Left Project. All rights reserved.</p>
+    </footer>
 </body>
 </html>
